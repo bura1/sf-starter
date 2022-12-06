@@ -1,0 +1,52 @@
+body {
+    padding-top: 95px;
+    font-size: 15px;
+}
+
+.block {
+    border-radius: 5px;
+}
+
+.sidebar {
+    position: fixed;
+    bottom: 20px;
+    top: 95px;
+    width: 250px;
+}
+
+.navbar {
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+    .container-fluid {
+        padding: 0;
+
+        .navbar-nav {
+            align-items: center;
+
+            .nav-item {
+                .dropdown {
+                    .dropdown-toggle::after {
+                        margin-left: 8px;
+                    }
+                    .dropdown-menu[data-bs-popper] {
+                        top: 40px;
+                        right: -10px;
+                        left: unset;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.dashboard {
+    margin-bottom: 25px;
+}
+
+.dashboard-footer {
+    border-top: 1px dashed #32383e;
+    height: 60px;
+    display: flex;
+    align-items: center;
+}

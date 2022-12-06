@@ -1,0 +1,68 @@
+@font-face {
+    font-family: Outfit;
+    src: url('../font/Outfit-Black.ttf');
+}
+@font-face {
+    font-family: Outfit;
+    src: url('../font/Outfit-Bold.ttf');
+}
+@font-face {
+    font-family: Outfit;
+    src: url('../font/Outfit-ExtraBold.ttf');
+}
+@font-face {
+    font-family: Outfit;
+    src: url('../font/Outfit-ExtraLight.ttf');
+}
+@font-face {
+    font-family: Outfit;
+    src: url('../font/Outfit-Light.ttf');
+}
+@font-face {
+    font-family: Outfit;
+    src: url('../font/Outfit-Medium.ttf');
+}
+@font-face {
+    font-family: Outfit;
+    src: url('../font/Outfit-Regular.ttf');
+}
+@font-face {
+    font-family: Outfit;
+    src: url('../font/Outfit-SemiBold.ttf');
+}
+@font-face {
+    font-family: Outfit;
+    src: url('../font/Outfit-Thin.ttf');
+}
+@font-face {
+    font-family: Outfit;
+    src: url('../font/Outfit-VariableFont_wght.ttf');
+}
+
+html, body, .tooltip, .popover {
+    font-family: Outfit, sans-serif !important;
+}
+code, kbd, pre, samp, .text-monospace {
+    font-family: monospace!important;
+}
+button, input, optgroup, select, textarea {
+    font-family: inherit!important;
+}
+
+.sf-bg-dark {
+   background-color: #1a1d21;
+}
+.sf-bg-secondary {
+    background-color: #212529;
+}
+.responsive-padding {
+    padding-left: 68px!important;
+    padding-right: 68px!important;
+}
+
+.text-white {
+    color: #ced4da!important;
+}
+.text-grey {
+    color: #878a99!important;
+}

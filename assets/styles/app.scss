@@ -1,0 +1,16 @@
+@import "~bootstrap";
+@import "variables.scss";
+@import "utilities.scss";
+
+.main {
+    .content {
+        margin-left: 274px;
+        display: flex;
+        flex-direction: column;
+        min-height: calc(100vh - 120px);
+
+        .dashboard {
+            flex: 1;
+        }
+    }
+}
