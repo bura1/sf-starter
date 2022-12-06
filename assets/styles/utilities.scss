@@ -12,6 +12,12 @@ body {
     bottom: 20px;
     top: 95px;
     width: 250px;
+
+    .nav-link {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
 }
 
 .navbar {

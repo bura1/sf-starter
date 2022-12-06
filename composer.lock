@@ -4,8 +4,48 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "47f0f2d8eeb4a3915b32935a41410278",
+    "content-hash": "fdaea7616dea069a97b56a0d02ff1785",
     "packages": [
+        {
+            "name": "ameotoko/feathericon-bundle",
+            "version": "v1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ameotoko/feathericon-bundle.git",
+                "reference": "3001b1cefcb7587abd2dea87874535efa348179a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ameotoko/feathericon-bundle/zipball/3001b1cefcb7587abd2dea87874535efa348179a",
+                "reference": "3001b1cefcb7587abd2dea87874535efa348179a",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.4 || ^8.0",
+                "pixelrobin/php-feather": "^1.0"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-4": {
+                    "Ameotoko\\FeatherIcon\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "ameotoko",
+                    "email": "andrey.vinichenko@gmail.com"
+                }
+            ],
+            "support": {
+                "issues": "https://github.com/ameotoko/feathericon-bundle/issues",
+                "source": "https://github.com/ameotoko/feathericon-bundle/tree/v1.0.1"
+            },
+            "time": "2022-05-06T14:53:53+00:00"
+        },
         {
             "name": "doctrine/annotations",
             "version": "1.13.3",
@@ -1523,6 +1563,55 @@
                 }
             ],
             "time": "2022-11-21T01:32:31+00:00"
+        },
+        {
+            "name": "pixelrobin/php-feather",
+            "version": "v1.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Pixelrobin/php-feather.git",
+                "reference": "0c1a4a06d078891ac4f1b9b7091158c27bd02d0b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Pixelrobin/php-feather/zipball/0c1a4a06d078891ac4f1b9b7091158c27bd02d0b",
+                "reference": "0c1a4a06d078891ac4f1b9b7091158c27bd02d0b",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "7"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Feather\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michael Savchuk",
+                    "email": "pixelrobin@hotmail.com"
+                }
+            ],
+            "description": "PHP library for feather icons",
+            "keywords": [
+                "feather",
+                "icons",
+                "pixelrobin",
+                "svg"
+            ],
+            "support": {
+                "issues": "https://github.com/Pixelrobin/php-feather/issues",
+                "source": "https://github.com/Pixelrobin/php-feather/tree/master"
+            },
+            "time": "2020-03-19T06:05:02+00:00"
         },
         {
             "name": "psr/cache",
