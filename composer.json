@@ -14,11 +14,15 @@
         "symfony/console": "6.2.*",
         "symfony/dotenv": "6.2.*",
         "symfony/flex": "^2",
+        "symfony/form": "6.2.*",
         "symfony/framework-bundle": "6.2.*",
+        "symfony/mailer": "6.2.*",
         "symfony/runtime": "6.2.*",
         "symfony/security-bundle": "6.2.*",
+        "symfony/validator": "6.2.*",
         "symfony/webpack-encore-bundle": "^1.16",
-        "symfony/yaml": "6.2.*"
+        "symfony/yaml": "6.2.*",
+        "symfonycasts/verify-email-bundle": "^1.12"
     },
     "config": {
         "allow-plugins": {
@@ -56,6 +60,21 @@
         ],
         "post-update-cmd": [
             "@auto-scripts"
+        ],
+        "load-fixtures": [
+            "rm -rf migrations/*",
+            "symfony console doctrine:database:drop --if-exists --force",
+            "symfony console doctrine:database:create",
+            "symfony console make:migration",
+            "symfony console doctrine:migrations:migrate",
+            "symfony console doctrine:fixtures:load"
+        ],
+        "restart-db": [
+            "rm -rf migrations/*",
+            "symfony console doctrine:database:drop --if-exists --force",
+            "symfony console doctrine:database:create",
+            "symfony console make:migration",
+            "symfony console doctrine:migrations:migrate"
         ]
     },
     "conflict": {

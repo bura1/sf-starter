@@ -62,8 +62,28 @@ body {
 
     .form-login {
         width: 100%;
-        max-width: 330px;
+        max-width: 360px;
         padding: 15px;
         margin: 0 auto;
+    }
+}
+
+.register-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+
+    .form-register {
+        width: 100%;
+        max-width: 360px;
+        padding: 15px;
+        margin: 0 auto;
+    }
+}
+
+form {
+    label {
+        margin-bottom: 0!important;
     }
 }
