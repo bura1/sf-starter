@@ -1,8 +1,15 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <div class="dashboard">
-        {% block dashboard %}
-        {% endblock %}
+    {{ include('/admin/partials/topbar.html.twig') }}
+    <div class="main responsive-padding">
+        {{ include('admin/partials/sidebar.html.twig') }}
+        <div class="content">
+            <div class="dashboard">
+                {% block dashboard %}
+                {% endblock %}
+            </div>
+            {{ include('admin/partials/footer.html.twig') }}
+        </div>
     </div>
 {% endblock %}

@@ -1,5 +1,4 @@
 body {
-    padding-top: 95px;
     font-size: 15px;
 }
 
@@ -53,4 +52,18 @@ body {
     height: 60px;
     display: flex;
     align-items: center;
+}
+
+.login-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+
+    .form-login {
+        width: 100%;
+        max-width: 330px;
+        padding: 15px;
+        margin: 0 auto;
+    }
 }

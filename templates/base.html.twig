@@ -13,14 +13,8 @@
         {% endblock %}
     </head>
     <body class="bg-light">
-        {{ include('/admin/partials/topbar.html.twig') }}
-        <div class="main responsive-padding">
-            {{ include('admin/partials/sidebar.html.twig') }}
-            <div class="content">
-                {% block body %}{% endblock %}
-                {{ include('admin/partials/footer.html.twig') }}
-            </div>
-        </div>
+        {% block body %}
+        {% endblock %}
     </body>
 
     {% block footer_javascripts %}
