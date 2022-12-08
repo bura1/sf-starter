@@ -30,16 +30,14 @@ body {
         .navbar-nav {
             align-items: center;
 
-            .nav-item {
-                .dropdown {
-                    .dropdown-toggle::after {
-                        margin-left: 8px;
-                    }
-                    .dropdown-menu[data-bs-popper] {
-                        top: 40px;
-                        right: -10px;
-                        left: unset;
-                    }
+            .dropdown {
+                .dropdown-toggle::after {
+                    margin-left: 8px;
+                }
+                .dropdown-menu[data-bs-popper] {
+                    top: 40px;
+                    right: -10px;
+                    left: unset;
                 }
             }
         }

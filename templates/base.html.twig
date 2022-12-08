@@ -12,7 +12,7 @@
             {{ encore_entry_script_tags('app') }}
         {% endblock %}
     </head>
-    <body class="text-white sf-bg-dark">
+    <body class="text-grey sf-bg-dark">
         {{ include('/admin/partials/topbar.html.twig') }}
         <div class="main responsive-padding">
             {{ include('admin/partials/sidebar.html.twig') }}
@@ -22,4 +22,8 @@
             </div>
         </div>
     </body>
+
+    {% block footer_javascripts %}
+        {{ encore_entry_script_tags('custom') }}
+    {% endblock %}
 </html>
