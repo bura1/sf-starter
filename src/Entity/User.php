@@ -52,6 +52,18 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\OneToOne(targetEntity: ProfilePicture::class, orphanRemoval: true)]
     private $profilePicture;
 
+    #[ORM\Column(length: 15, nullable: true)]
+    private ?string $phoneNumber = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $skype = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $telegram = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $facebook = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -211,6 +223,54 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         if ($profilePicture->getUser() === $this) {
             $profilePicture->setUser(null);
         }
+
+        return $this;
+    }
+
+    public function getPhoneNumber(): ?string
+    {
+        return $this->phoneNumber;
+    }
+
+    public function setPhoneNumber(?string $phoneNumber): self
+    {
+        $this->phoneNumber = $phoneNumber;
+
+        return $this;
+    }
+
+    public function getSkype(): ?string
+    {
+        return $this->skype;
+    }
+
+    public function setSkype(?string $skype): self
+    {
+        $this->skype = $skype;
+
+        return $this;
+    }
+
+    public function getTelegram(): ?string
+    {
+        return $this->telegram;
+    }
+
+    public function setTelegram(?string $telegram): self
+    {
+        $this->telegram = $telegram;
+
+        return $this;
+    }
+
+    public function getFacebook(): ?string
+    {
+        return $this->facebook;
+    }
+
+    public function setFacebook(?string $facebook): self
+    {
+        $this->facebook = $facebook;
 
         return $this;
     }

@@ -1,0 +1,20 @@
+{% extends 'dashboard/base.html.twig' %}
+
+{% block title %}Edit my profile{% endblock %}
+
+{% block dashboard %}
+    <nav aria-label="breadcrumb" class="mb-3">
+        <ol class="breadcrumb mb-0">
+            <li class="breadcrumb-item"><a href="{{ path('admin_dashboard') }}">Dashboard</a></li>
+            <li class="breadcrumb-item"><a href="{{ path('my_profile') }}">My profile</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Edit</li>
+        </ol>
+    </nav>
+
+    <section class="radius-5 bg-white shadow-sm p-4">
+        <h2 class="mb-4">Edit my profile</h2>
+        <div class="form-box">
+            {{ form(form) }}
+        </div>
+    </section>
+{% endblock %}
