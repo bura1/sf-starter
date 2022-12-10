@@ -3,36 +3,19 @@
     <hr>
     <ul class="nav nav-pills flex-column mb-auto">
         <li>
-            <a href="#" class="nav-link" aria-current="page">
+            <a href="{{ path('admin_dashboard') }}" class="nav-link" aria-current="page">
                 {{ feathericon('home', {stroke: '#878a99', 'stroke-width': 2, 'width': 16, 'height': 16}) }}
-                Home
-            </a>
-        </li>
-        <li>
-            <a href="#" class="nav-link">
-                {{ feathericon('codepen', {stroke: '#878a99', 'stroke-width': 2, 'width': 16, 'height': 16}) }}
                 Dashboard
-            </a>
-        </li>
-        <li>
-            <a href="#" class="nav-link">
-                {{ feathericon('shopping-bag', {stroke: '#878a99', 'stroke-width': 2, 'width': 16, 'height': 16}) }}
-                Orders
-            </a>
-        </li>
-        <li>
-            <a href="#" class="nav-link">
-                {{ feathericon('layers', {stroke: '#878a99', 'stroke-width': 2, 'width': 16, 'height': 16}) }}
-                Products
-            </a>
-        </li>
-        <li>
-            <a href="#" class="nav-link">
-                {{ feathericon('users', {stroke: '#878a99', 'stroke-width': 2, 'width': 16, 'height': 16}) }}
-                Users
             </a>
         </li>
     </ul>
     <hr>
-    logout
+    <ul class="nav nav-pills flex-column">
+        <li>
+            <a href="{{ path('app_logout') }}" class="nav-link" aria-current="page">
+                {{ feathericon('home', {stroke: '#878a99', 'stroke-width': 2, 'width': 16, 'height': 16}) }}
+                Logout
+            </a>
+        </li>
+    </ul>
 </div>

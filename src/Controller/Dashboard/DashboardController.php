@@ -8,7 +8,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Http\Attribute\IsGranted;
 
 #[IsGranted('IS_AUTHENTICATED_FULLY')]
-class AdminController extends AbstractController
+class DashboardController extends AbstractController
 {
     #[Route('/dashboard', name: 'admin_dashboard')]
     public function dashboard(): Response
