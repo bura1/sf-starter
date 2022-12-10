@@ -1,5 +1,15 @@
 {% extends 'dashboard/base.html.twig' %}
 
 {% block dashboard %}
-    my profile
+    <input type="file"
+           class="filepond"
+           name="filepond"
+           multiple
+           data-allow-reorder="true"
+           data-max-file-size="3MB"
+           data-max-files="3">
+{% endblock %}
+
+{% block footer_javascripts %}
+    {{ encore_entry_script_tags('file-uploads') }}
 {% endblock %}

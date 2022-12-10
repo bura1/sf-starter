@@ -1,6 +1,7 @@
-@import "~bootstrap";
-@import "variables.scss";
-@import "utilities.scss";
+@import '~bootstrap';
+@import 'filepond/dist/filepond.css';
+@import 'variables.scss';
+@import 'utilities.scss';
 
 .main {
     .content {
