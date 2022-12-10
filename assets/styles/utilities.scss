@@ -10,7 +10,7 @@ body {
     position: fixed;
     bottom: 20px;
     top: 95px;
-    width: 250px;
+    width: 280px;
 
     .nav-link {
         display: flex;
@@ -87,4 +87,8 @@ form {
     label {
         margin-bottom: 0!important;
     }
+}
+
+.filepond--credits {
+    display: none;
 }

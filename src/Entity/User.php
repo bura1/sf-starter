@@ -49,6 +49,9 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(length: 20, unique: true)]
     private ?string $username = null;
 
+    #[ORM\OneToOne(targetEntity: ProfilePicture::class, orphanRemoval: true)]
+    private $profilePicture;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -187,6 +190,27 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setUsername(string $username): self
     {
         $this->username = $username;
+
+        return $this;
+    }
+
+    public function getProfilePicture(): ?ProfilePicture
+    {
+        return $this->profilePicture;
+    }
+
+    public function setProfilePicture(?ProfilePicture $profilePicture): self
+    {
+        $this->profilePicture = $profilePicture;
+
+        return $this;
+    }
+
+    public function removeProfilePicture(ProfilePicture $profilePicture): self
+    {
+        if ($profilePicture->getUser() === $this) {
+            $profilePicture->setUser(null);
+        }
 
         return $this;
     }

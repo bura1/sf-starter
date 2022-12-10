@@ -13,6 +13,8 @@ class UserSettingsController extends AbstractController
     #[Route('/my-profile', name: 'my_profile')]
     public function dashboard(): Response
     {
-        return $this->render('dashboard/my_profile.html.twig');
+        return $this->render('dashboard/my_profile.html.twig', [
+            'user' => $this->getUser()
+        ]);
     }
 }
