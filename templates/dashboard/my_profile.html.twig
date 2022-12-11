@@ -10,83 +10,85 @@
         </ol>
     </nav>
 
-    <section class="radius-5 bg-white shadow-sm p-4">
-        <h2 class="page-title">My profile</h2>
-        <div class="row">
-            <div class="col-lg-4">
-                <div class="profile-picture d-flex flex-column align-items-center" {{ stimulus_controller('profile-picture') }}>
-                    <div class="d-none" {{ stimulus_target('profile-picture', 'userId') }}>{{ user.id }}</div>
-                    {% if user.profilePicture %}
-                        <div class="pic-box">
-                            <img src="/files/{{ user.profilePicture.getFilePath }}" alt="avatar img-fluid">
+    <div class="card">
+        <h3 class="card-header">My profile</h3>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="profile-picture d-flex flex-column align-items-center" {{ stimulus_controller('profile-picture') }}>
+                        <div class="d-none" {{ stimulus_target('profile-picture', 'userId') }}>{{ user.id }}</div>
+                        {% if user.profilePicture %}
+                            <div class="pic-box">
+                                <img src="/files/{{ user.profilePicture.getFilePath }}" alt="avatar img-fluid">
+                            </div>
+                            <span class="delete-picture btn btn-secondary mt-2 btn-sm" data-action="click->profile-picture#delete">Delete photo</span>
+                        {% else %}
+                            <input type="file"
+                                   class="filepond"
+                                   name="filepond"
+                                   accept="image/png, image/jpeg, image/gif"
+                                   data-max-file-size="3MB" />
+                        {% endif %}
+                    </div>
+                    <h4 class="my-3 text-center">{{ user.username }}</h4>
+                </div>
+                <div class="col-lg-8">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <p class="mb-0">Full Name</p>
                         </div>
-                        <span class="delete-picture btn btn-secondary mt-2 btn-sm" data-action="click->profile-picture#delete">Delete photo</span>
-                    {% else %}
-                        <input type="file"
-                               class="filepond"
-                               name="filepond"
-                               accept="image/png, image/jpeg, image/gif"
-                               data-max-file-size="3MB" />
-                    {% endif %}
+                        <div class="col-sm-9">
+                            <p class="text-muted mb-0">{{ user.firstName ~ ' ' ~ user.lastName }}</p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <p class="mb-0">Email</p>
+                        </div>
+                        <div class="col-sm-9">
+                            <p class="text-muted mb-0">{{ user.email }}</p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <p class="mb-0">Phone</p>
+                        </div>
+                        <div class="col-sm-9">
+                            <p class="text-muted mb-0">{{ user.phoneNumber }}</p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <p class="mb-0">Skype</p>
+                        </div>
+                        <div class="col-sm-9">
+                            <p class="text-muted mb-0">{{ user.skype }}</p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <p class="mb-0">Telegram</p>
+                        </div>
+                        <div class="col-sm-9">
+                            <p class="text-muted mb-0">{{ user.telegram }}</p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row mb-4">
+                        <div class="col-sm-3">
+                            <p class="mb-0">Facebook</p>
+                        </div>
+                        <div class="col-sm-9">
+                            <p class="text-muted mb-0">{{ user.facebook }}</p>
+                        </div>
+                    </div>
+                    <a href="/edit-my-profile" class="btn btn-primary">Edit my profile</a>
                 </div>
-                <h4 class="my-3 text-center">{{ user.username }}</h4>
-            </div>
-            <div class="col-lg-8">
-                <div class="row">
-                    <div class="col-sm-3">
-                        <p class="mb-0">Full Name</p>
-                    </div>
-                    <div class="col-sm-9">
-                        <p class="text-muted mb-0">{{ user.firstName ~ ' ' ~ user.lastName }}</p>
-                    </div>
-                </div>
-                <hr>
-                <div class="row">
-                    <div class="col-sm-3">
-                        <p class="mb-0">Email</p>
-                    </div>
-                    <div class="col-sm-9">
-                        <p class="text-muted mb-0">{{ user.email }}</p>
-                    </div>
-                </div>
-                <hr>
-                <div class="row">
-                    <div class="col-sm-3">
-                        <p class="mb-0">Phone</p>
-                    </div>
-                    <div class="col-sm-9">
-                        <p class="text-muted mb-0">{{ user.phoneNumber }}</p>
-                    </div>
-                </div>
-                <hr>
-                <div class="row">
-                    <div class="col-sm-3">
-                        <p class="mb-0">Skype</p>
-                    </div>
-                    <div class="col-sm-9">
-                        <p class="text-muted mb-0">{{ user.skype }}</p>
-                    </div>
-                </div>
-                <hr>
-                <div class="row">
-                    <div class="col-sm-3">
-                        <p class="mb-0">Telegram</p>
-                    </div>
-                    <div class="col-sm-9">
-                        <p class="text-muted mb-0">{{ user.telegram }}</p>
-                    </div>
-                </div>
-                <hr>
-                <div class="row mb-4">
-                    <div class="col-sm-3">
-                        <p class="mb-0">Facebook</p>
-                    </div>
-                    <div class="col-sm-9">
-                        <p class="text-muted mb-0">{{ user.facebook }}</p>
-                    </div>
-                </div>
-                <a href="/edit-my-profile" class="delete-picture btn btn-secondary mt-2 btn-sm">Edit my profile</a>
             </div>
         </div>
-    </section>
+    </div>
 {% endblock %}
