@@ -1,0 +1,23 @@
+{% extends 'dashboard/base.html.twig' %}
+
+{% block title %}Add new product type{% endblock %}
+
+{% block dashboard %}
+    <nav aria-label="breadcrumb" class="mb-3">
+        <ol class="breadcrumb mb-0">
+            <li class="breadcrumb-item"><a href="{{ path('admin_dashboard') }}">Dashboard</a></li>
+            <li class="breadcrumb-item"><a href="{{ path('product_types') }}">Product types</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Add new product type</li>
+        </ol>
+    </nav>
+
+    <div class="card">
+        <h3 class="card-header">Add new product type</h3>
+        <div class="card-body">
+            <div class="form-box">
+                {{ form(form) }}
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

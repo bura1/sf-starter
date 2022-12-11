@@ -1,0 +1,41 @@
+{% extends 'dashboard/base.html.twig' %}
+
+{% block title %}Badges{% endblock %}
+
+{% block dashboard %}
+    <nav aria-label="breadcrumb" class="mb-3">
+        <ol class="breadcrumb mb-0">
+            <li class="breadcrumb-item"><a href="{{ path('admin_dashboard') }}">Dashboard</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Badges</li>
+        </ol>
+    </nav>
+
+    <div class="card">
+        <h3 class="card-header">Badges</h3>
+        <div class="card-body">
+            <table class="table align-middle bg-white">
+                <thead class="bg-light">
+                    <tr>
+                        <th>Badge</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for badge in badges %}
+                        <tr {{ stimulus_controller('badge') }}>
+                            <td><span class="badge" style="background-color: {{ badge.color }}; color: {{ badge.textColor }}" {{ stimulus_target('badge', 'name') }}>{{ badge.name }}</span></td>
+                            <td>
+                                <a href="{{ path('edit_badge', {'badgeId': badge.id}) }}">Edit</a>
+                                <span class="ms-3 text-danger cursor-pointer" data-action="click->badge#delete">Delete</span>
+                                <div class="d-none" {{ stimulus_target('badge', 'id') }}>{{ badge.id }}</div>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+            <a href="{{ path('add_new_badge') }}" class="btn btn-primary">Add new badge</a>
+        </div>
+    </div>
+
+{% endblock %}

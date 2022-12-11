@@ -1,0 +1,41 @@
+{% extends 'dashboard/base.html.twig' %}
+
+{% block title %}Static pages{% endblock %}
+
+{% block dashboard %}
+    <nav aria-label="breadcrumb" class="mb-3">
+        <ol class="breadcrumb mb-0">
+            <li class="breadcrumb-item"><a href="{{ path('admin_dashboard') }}">Dashboard</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Static pages</li>
+        </ol>
+    </nav>
+
+    <div class="card">
+        <h3 class="card-header">Static pages</h3>
+        <div class="card-body">
+            <table class="table align-middle bg-white">
+                <thead class="bg-light">
+                <tr>
+                    <th>Title</th>
+                    <th>Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for page in pages %}
+                    <tr {{ stimulus_controller('static-page') }}>
+                        <td {{ stimulus_target('static-page', 'title') }}>{{ page.title }}</td>
+                        <td>
+                            <a href="{{ path('edit_static_page', {'pageId': page.id}) }}">Edit</a>
+                            <span class="ms-3 text-danger cursor-pointer" data-action="click->static-page#delete">Delete</span>
+                            <div class="d-none" {{ stimulus_target('static-page', 'id') }}>{{ page.id }}</div>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+
+            <a href="{{ path('add_new_static_page') }}" class="btn btn-primary">Add new static page</a>
+        </div>
+    </div>
+
+{% endblock %}

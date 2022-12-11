@@ -9,7 +9,7 @@
         {% endfor %}
 
         {{ form_start(registrationForm, {'attr': {'class': 'form-register'}}) }}
-            <h1 class="h3 mb-3 font-weight-normal">Registration form</h1>
+            <h1 class="h3 mb-3 font-weight-normal">Register</h1>
 
             {{ form_row(registrationForm.email) }}
             {{ form_row(registrationForm.username) }}
@@ -20,7 +20,10 @@
             {{ form_row(registrationForm.lastName) }}
             {{ form_row(registrationForm.agreeTerms) }}
 
-            <button type="submit" class="btn btn-primary">Register</button>
+            <div class="d-flex align-items-center justify-content-between">
+                <button type="submit" class="btn btn-primary">Register</button>
+                <a href="/login">Login</a>
+            </div>
         {{ form_end(registrationForm) }}
     </div>
 {% endblock %}

@@ -1,28 +1,26 @@
 <nav class="navbar navbar-expand-md bg-white fixed-top responsive-padding shadow-sm">
     <div class="container-fluid">
         <a class="navbar-brand" href="{{ path('admin_dashboard') }}">LOGO</a>
-            <div class="navbar-nav ms-auto mb-2 mb-md-0">
-{#                <div class="nav-item">#}
-{#                    <a class="nav-link" aria-current="page" href="#">Home</a>#}
-{#                </div>#}
-{#                <div class="nav-item">#}
-{#                    <a class="nav-link" href="#">Link</a>#}
-{#                </div>#}
-                <div class="nav-item ms-5">
-                    <div class="dropdown">
-                        <a href="#" class="d-flex align-items-center text-grey text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-                            {% if app.user.getProfilePicture %}
-                                <img src="/files/{{ app.user.getProfilePicture.getFilePath }}" alt="" width="32" height="32" class="rounded-circle me-2">
-                            {% endif %}
-                            <strong>tburic</strong>
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
-                            <li><a class="dropdown-item" href="{{ path('my_profile') }}">My Profile</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="{{ path('app_logout') }}">Logout</a></li>
-                        </ul>
-                    </div>
+        <div class="navbar-nav ms-auto mb-2 mb-md-0">
+            <div class="nav-item ms-5">
+                <div class="dropdown">
+                    <a class="dropdown-toggle d-flex align-items-center hidden-arrow" href="#" id="navbarDropdownMenuAvatar" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+                        {% if app.user.getProfilePicture %}
+                            <img src="/files/{{ app.user.getProfilePicture.getFilePath }}" class="rounded-circle me-2" height="25" width="25" alt="Black and White Portrait of a Man" loading="lazy"/>
+                        {% endif %}
+                        <strong>{{ app.user.username }}</strong>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-dark" aria-labelledby="navbarDropdownMenuAvatar">
+                        <li>
+                            <a class="dropdown-item" href="{{ path('my_profile') }}">My profile</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="{{ path('app_logout') }}">Logout</a>
+                        </li>
+                    </ul>
                 </div>
+
             </div>
+        </div>
     </div>
 </nav>

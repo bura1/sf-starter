@@ -8,7 +8,7 @@ body {
 
 .sidebar {
     position: fixed;
-    bottom: 20px;
+    //bottom: 20px;
     top: 95px;
     width: 280px;
 
@@ -111,6 +111,6 @@ form {
     }
 }
 
-.page-title {
-
+.cursor-pointer {
+    cursor: pointer;
 }

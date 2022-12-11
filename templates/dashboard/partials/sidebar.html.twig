@@ -1,19 +1,58 @@
 <div class="d-flex flex-column flex-shrink-0 p-3 sidebar radius-5 bg-white shadow-sm">
-    <span class="fs-4">Actions</span>
-    <hr>
-    <ul class="nav nav-pills flex-column mb-auto">
+{#    <span class="fs-4">Actions</span>#}
+{#    <hr>#}
+    <ul class="nav flex-column mb-auto">
         <li>
             <a href="{{ path('admin_dashboard') }}" class="nav-link" aria-current="page">
                 {{ feathericon('home', {stroke: '#878a99', 'stroke-width': 2, 'width': 16, 'height': 16}) }}
                 Dashboard
             </a>
         </li>
+        <hr>
+        <li>
+            <a href="" class="nav-link" aria-current="page">
+                {{ feathericon('users', {stroke: '#878a99', 'stroke-width': 2, 'width': 16, 'height': 16}) }}
+                Users
+            </a>
+        </li>
+        <li>
+            <a href="{{ path('badges') }}" class="nav-link" aria-current="page">
+                {{ feathericon('tag', {stroke: '#878a99', 'stroke-width': 2, 'width': 16, 'height': 16}) }}
+                Badges
+            </a>
+        </li>
+        <hr>
+        <li>
+            <a href="{{ path('products') }}" class="nav-link" aria-current="page">
+                {{ feathericon('grid', {stroke: '#878a99', 'stroke-width': 2, 'width': 16, 'height': 16}) }}
+                Products
+            </a>
+        </li>
+        <li>
+            <a href="{{ path('product_categories') }}" class="nav-link" aria-current="page">
+                {{ feathericon('layers', {stroke: '#878a99', 'stroke-width': 2, 'width': 16, 'height': 16}) }}
+                Product categories
+            </a>
+        </li>
+        <li>
+            <a href="{{ path('product_types') }}" class="nav-link" aria-current="page">
+                {{ feathericon('hexagon', {stroke: '#878a99', 'stroke-width': 2, 'width': 16, 'height': 16}) }}
+                Product types
+            </a>
+        </li>
+        <hr>
+        <li>
+            <a href="{{ path('static_pages') }}" class="nav-link" aria-current="page">
+                {{ feathericon('file-text', {stroke: '#878a99', 'stroke-width': 2, 'width': 16, 'height': 16}) }}
+                Static pages
+            </a>
+        </li>
     </ul>
     <hr>
-    <ul class="nav nav-pills flex-column">
+    <ul class="nav flex-column">
         <li>
             <a href="{{ path('app_logout') }}" class="nav-link" aria-current="page">
-                {{ feathericon('home', {stroke: '#878a99', 'stroke-width': 2, 'width': 16, 'height': 16}) }}
+                {{ feathericon('user-x', {stroke: '#878a99', 'stroke-width': 2, 'width': 16, 'height': 16}) }}
                 Logout
             </a>
         </li>
