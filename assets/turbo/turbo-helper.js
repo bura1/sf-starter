@@ -1,3 +1,5 @@
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+
 const TurboHelper = class {
     constructor() {
         document.addEventListener('turbo:before-cache', () => {
@@ -11,18 +13,18 @@ const TurboHelper = class {
                     }
                 })
             }
-
-            // $('textarea').ckeditor({
-            //     readOnly: true
-            // });
         });
 
         document.addEventListener('turbo:load', () => {
-            $('#products_table').DataTable();
+            if (!(document.querySelectorAll('#products_table_wrapper').length > 0) &&
+                document.querySelectorAll('table').length > 0) {
+                $('#products_table').DataTable();
+            }
 
-            // $('textarea').ckeditor({
-            //     readOnly: false
-            // });
+            if (!(document.querySelectorAll('.ck-editor').length > 0) &&
+                document.querySelectorAll('textarea').length > 0) {
+                ClassicEditor.create(document.querySelector('textarea'))
+            }
         })
     }
 }
